@@ -1,29 +1,11 @@
-from fastapi import FastAPI, Request, Form
-from fastapi.templating import Jinja2Templates
-
-from ai_service import summarize_text
+from fastapi import FastAPI
 
 app = FastAPI()
 
-templates = Jinja2Templates(directory="templates")
-
-
-# Show homepage
 @app.get("/")
-def home(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+def home():
+    return {"message": "Hello, FastAPI!"}
 
-
-# Handle summarization request
-@app.post("/summarize")
-def summarize(request: Request, text: str = Form(...)):
-    summary = summarize_text(text)
-
-    return templates.TemplateResponse(
-        "index.html",
-        {
-            "request": request,
-            "original_text": text,
-            "summary": summary
-        }
-    )
+@app.get("/hello/{name}")
+def say_hello(name: str):
+    return {"message": f"Hello, {name}!"}
