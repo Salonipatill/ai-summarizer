@@ -69,3 +69,21 @@ ai-service/
 ├── pyproject.toml
 ├── .env
 └── README.md
+
+
+Long-Term Architecture
+
+Node.js Monolith
+       │
+       ▼
+FastAPI AI Gateway
+       │
+       ▼
+LangGraph Workflows
+       │
+ ┌─────┼─────────┐
+ ▼     ▼         ▼
+RAG   LLM      Tools
+ │
+ ▼
+Qdrant
