@@ -113,6 +113,33 @@ Purpose:
 
 ---
 
+```
+Meaning
+app.routers.summarize :-  app/routers/summarize.py
+```
+
+```
+router → original object name inside summarize.py
+summarize_router → new local name (alias)/reference name of same object
+```
+
+
+```
+APIRouter is used to create route groups/modules in FastAPI.
+It helps organize APIs into separate files.
+
+Example:
+
+users.py → user routes
+auth.py → authentication routes
+summarize.py → text summarization routes
+```
+
+```Meanig of include_router:-
+Take all APIs/endpoints inside summarize_router and attach them to the main app.
+```
+
+
 # Step 4 — Create Request Schema
 
 File:
