@@ -68,9 +68,17 @@ Activate virtual environment.
 
 Then install:
 
+if using openai api
+
 ```bash
 pip install fastapi uvicorn openai python-dotenv
 ```
+if using groq api key
+
+```bash
+pip install fastapi uvicorn groq python-dotenv
+```
+
 
 Explanation:
 - `fastapi` → backend framework

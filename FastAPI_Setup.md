@@ -62,7 +62,7 @@ The terminal is used to run Python and FastAPI commands.
 Move into the AI service directory:
 
 ```bash
-cd backend/ai-service
+cd ai-service
 ```
 
 This folder contains the FastAPI backend code.
@@ -118,6 +118,10 @@ Explanation:
 Install all required project packages:
 
 ```bash
+pip freeze > requirements.txt
+```
+
+```bash
 pip install -r requirements.txt
 ```
 
@@ -162,6 +166,8 @@ The `.env` file stores:
 ## 9. Run FastAPI Server
 
 Start the FastAPI development server:
+
+before runnig this command  firstly  create codebase[Create AI Service Structure first from Feature1_Article_Summarization.md]
 
 ```bash
 uvicorn app.main:app --reload
