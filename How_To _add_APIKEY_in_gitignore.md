@@ -15,6 +15,7 @@ project-root/
 ├── backend/
 ├── frontend/
 └── docs/
+```
 
 ### Command
 
