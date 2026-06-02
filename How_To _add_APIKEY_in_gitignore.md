@@ -49,4 +49,3 @@ It displays the contents of the .gitignore file in the terminal.:-
 ```text
 cat .gitignore
 ```
-
