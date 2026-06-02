@@ -340,7 +340,7 @@ Ensures everyone uses exactly Python 3.11.3.(if version is this )
 
 otherwise write
 
-FROM python:3.11.3-slim
+FROM python:3.11-slim
 
 
 ```
@@ -381,6 +381,17 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 ```
 # Save the Dockerfile
 
+## Some extra commands to get some information:-
+
+
+# Check whether the Dockerfile exists
+```text
+Get-ChildItem Dockerfile
+```
+# Display the contents of the Dockerfile
+```text
+Get-Content Dockerfile
+```
 # Open Terminal in the ai-service Folder
 
 Check that the Dockerfile exists:
@@ -396,19 +407,64 @@ requirements.txt
 ...
 ```
 
+# Install Docker Desktop
+
+https://www.docker.com/products/docker-desktop/?utm_source=chatgpt.com
+
+# Run the installer.
+
+# Start Docker Desktop
+Open Docker Desktop from the Start Menu.
+Wait until it finishes starting (Docker icon becomes stable and shows it's running).
+
+in Configuration:-
+click:- All-users installation (Requires password)
+
+
+After that:
+
+Let Docker Desktop finish installing.
+If it asks for administrator permission, click Yes.
+If it asks to restart, restart your PC.
+Open Docker Desktop and wait until it says Docker is running.
+
+after installation succeeded
+
+click :-
+Close and log out
+
+# Verify Installation
+
+inside C:\The Infimit\infimit\ai-service
+```text
+docker --version
+```
+
+Then run:
+
+```text
+docker build -t ai-service .
+
+```
+
+
+
 # Build the Docker Image
 
 Run:
 
 ```text
-docker build -t ai-service .
+docker images
 ```
 
-If successful, you will see something like:
+# second time whenever you want run it again
+```text
+docker build -t ai-service .
+```
+# If you want a completely fresh build
 
 ```text
-Successfully built ...
-Successfully tagged ai-service:latest
+docker build --no-cache -t ai-service .
 ```
 
 # Step 4: Run the Container
