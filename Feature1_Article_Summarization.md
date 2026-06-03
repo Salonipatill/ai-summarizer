@@ -1219,6 +1219,45 @@ All users get equal access.
 
 
 
+# REDIS:-
+Redis is a very fast in-memory data storage system used by backend applications to store and access data instantly.
+
+
+# Redis Requirement Note (AI Microservice)
+
+Current Status
+
+```text
+At the present stage, Redis is not required because:
+
+The system is running on a limited architecture
+Only one FastAPI service instance is being used
+In-memory rate limiting and logging are sufficient
+```
+
+# Future Requirement of Redis
+
+```text
+Redis will be required when the system scales due to the following reasons:
+
+Multiple server instances (horizontal scaling)
+Centralized rate limiting across Express and FastAPI
+AI response caching to reduce API cost and improve speed
+API key and user quota management for SaaS model
+Shared session / state management between services
+```
+
+
+Redis is not needed now, but it becomes essential when the project moves from a single-server setup to a scalable SaaS-level architecture.
+
+
+
+
+
+
+
+
+
 
 
 
