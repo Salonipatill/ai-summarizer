@@ -22,4 +22,5 @@ Always do this before starting work:
 git pull origin feature/article-summarizer
 ```
 
-
+# To Download GROQ
+py -m pip install groq 
