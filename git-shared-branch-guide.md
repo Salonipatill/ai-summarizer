@@ -24,3 +24,6 @@ git pull origin feature/article-summarizer
 
 # To Download GROQ
 py -m pip install groq 
+
+# To Download DOTENV
+py -m pip install dotenv
