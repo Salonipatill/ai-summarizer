@@ -317,6 +317,69 @@ Run the application:
 ```text
 uvicorn app.main:app --reload
 ```
+inside this
+```text
+C:\The Infimit\infimit\ai-service
+```
+Create file:-
+test_env.py
+
+And Paste here:-
+
+```text
+from dotenv import dotenv_values
+
+required = [
+    "AI_INTERNAL_KEY",
+    "PORT",
+    "LOG_LEVEL",
+    "MODELS_CACHE_DIR",
+    "ENABLE_METRICS"
+]
+
+env = dotenv_values(".env")
+
+for var in required:
+    print(f"{var}: {'FOUND' if var in env else 'MISSING'}")
+
+```
+
+
+```text
+python test_env.py
+```
+
+```text
+from app.config import Settings
+
+try:
+    settings = Settings()
+    print("SUCCESS")
+    print(settings.model_dump())
+except Exception as e:
+    print(e)
+```
+
+```text
+python test_settings.py
+```
+Option 2: Run directly from PowerShell (no file needed)
+
+```text
+python -c "from dotenv import dotenv_values; print(dotenv_values('.env'))"
+```
+
+is used to check whether Python can read your .env file correctly.
+
+Use this command :-
+
+This proves the variables exist without revealing values.
+```text
+python -c "from dotenv import dotenv_values; env=dotenv_values('.env'); print({k:'***' for k in env})"
+```
+
+
+
 
 ## Dockerfile :-
 
