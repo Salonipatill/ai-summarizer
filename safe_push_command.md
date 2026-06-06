@@ -1,4 +1,5 @@
-# Step 1:-
+# Step-by step run the commands:-
+
 ```text
 PS C:\The Infimit> cd infimit
 ```

@@ -679,6 +679,34 @@ This is a simple test. Every request should print:
 ```text
 Auth Middleware Executed
 ```
+# Create logging middleware
+
+```text
+# app/middleware/logging.py
+
+import time
+from fastapi import Request
+
+async def logging_middleware(request: Request, call_next):
+    start = time.time()
+
+    response = await call_next(request)
+
+    duration = time.time() - start
+
+    print(
+        f"{request.method} {request.url.path} "
+        f"Status={response.status_code} "
+        f"Time={duration:.2f}s"
+    )
+
+    return response
+```
+# Register in main.py:
+
+```text
+app.middleware("http")(logging_middleware)
+```
 
 # Step 8: Run the Application
 
@@ -748,4 +776,167 @@ If the header is missing, the request is blocked and returns:
 with status code:
 ```text
 401 Unauthorized
+```
+
+
+# Metrics Skeleton Working
+
+## Create metrics.py in services
+
+```text
+# app/services/metrics.py
+
+metrics = {
+    "requests_total": 0
+}
+```
+
+Middleware:
+
+```text
+metrics["requests_total"] += 1
+```
+
+Endpoint:
+
+```text
+@app.get("/metrics")
+def metrics_endpoint():
+    return metrics
+```
+
+# 3. Model Loader Skeleton Working
+
+
+Create:
+
+```text
+# app/services/model_loader.py
+
+def load_model():
+    print("Loading model...")
+    return None
+```
+Startup:
+
+```text
+load_model()
+```
+
+Later you can load Hugging Face or Ollama models.
+
+# 4. Tests Passing
+
+
+```text
+tests/
+ └── test_health.py
+``` 
+
+
+# 5. GitHub Actions Passing
+
+Create:
+
+```text
+.github/workflows/tests.yml
+```
+
+
+```text
+name: Tests
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -r requirements.txt
+
+      - run: pytest
+```
+
+# 6. README Completed
+
+```text
+# AI-Service
+
+## Overview
+
+AI-Service is a FastAPI-based backend service for AI workflows and news summarization.
+
+## FastAPI
+
+FastAPI is a modern, high-performance Python framework for building APIs and backend services.
+
+**Used for:**
+
+* AI APIs
+* LLM Integrations
+* Semantic Search
+* Embeddings
+* Vector Database Operations
+* AI Microservices
+
+## Subphase 1 Status
+
+* ✅ FastAPI Service Running
+* ✅ Docker Working
+* ✅ Health Endpoint Working
+* ✅ Ready Endpoint Working
+* ✅ Auth Middleware Working
+* ✅ Logging Middleware Working
+* ✅ Metrics Skeleton Working
+* ✅ Model Loader Skeleton Working
+* ✅ Tests Passing
+* ✅ GitHub Actions Passing
+* ✅ README Completed
+* ✅ .env.example Completed
+* ✅ Models Stored Using Volume Mount
+
+## Current Tasks
+
+* Complete News Summarization
+* Convert News into Key Points
+* Keyword Extraction for Better Search
+
+## Author
+
+Infimit Team
+
+```
+
+# 7. .env.example Completed
+
+Create:
+
+```text
+AI_INTERNAL_KEY=your_key_here
+PORT=8000
+LOG_LEVEL=INFO
+MODELS_CACHE_DIR=/models
+ENABLE_METRICS=true
+```
+Never put real keys here.
+
+
+
+# 8. Models Stored Using Volume Mount
+
+```text
+volumes:
+  - ./models:/models
+```
+
+```text
+VOLUME ["/models"]
 ```
