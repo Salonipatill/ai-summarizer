@@ -27,3 +27,6 @@ py -m pip install groq
 
 # To Download DOTENV
 py -m pip install dotenv
+
+# To Delete the Branch Name
+git branch -D "Branch_Name"
