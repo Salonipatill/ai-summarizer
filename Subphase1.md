@@ -940,3 +940,124 @@ volumes:
 ```text
 VOLUME ["/models"]
 ```
+
+# dependencies.py
+
+```text
+from fastapi import Header, HTTPException
+from app.config import settings
+
+def verify_internal_key(
+    x_internal_key: str = Header(...)
+):
+    print("verify_internal_key called")
+    if x_internal_key != settings.AI_INTERNAL_KEY:
+        raise HTTPException(
+            status_code=403,
+            detail="Unauthorized"
+        )
+
+    return True
+```
+
+# models-create folder inside the app
+and then create metrics_model.py
+
+paste:-
+
+```text
+from pydantic import BaseModel
+
+class MetricsResponse(BaseModel):
+    total_requests: int
+    successful_requests: int
+    failed_requests: int
+```
+
+# create utils folder inside the app
+
+## and add cache.py and text.py
+
+# inside cache.py 
+
+```text
+# Speed up system using memory caching
+import time
+
+_cache = {}
+_cache_ttl = {}
+
+
+def set_cache(key: str, value, ttl: int = 60):
+    """Store value with time-to-live (TTL in seconds)"""
+    _cache[key] = value
+    _cache_ttl[key] = time.time() + ttl
+
+
+def get_cache(key: str):
+    """Return cached value if not expired"""
+    if key not in _cache:
+        return None
+
+    if time.time() > _cache_ttl.get(key, 0):
+        # expired
+        _cache.pop(key, None)
+        _cache_ttl.pop(key, None)
+        return None
+
+    return _cache[key]
+
+
+def delete_cache(key: str):
+    _cache.pop(key, None)
+    _cache_ttl.pop(key, None)
+
+
+def clear_cache():
+    _cache.clear()
+    _cache_ttl.clear()
+```
+
+## text.py
+
+```text
+# utils/text.py
+
+import re
+
+def clean_text(text: str) -> str:
+    """Remove extra spaces and normalize text"""
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def truncate_text(text: str, max_length: int = 100) -> str:
+    """Truncate long text safely"""
+    if len(text) <= max_length:
+        return text
+    return text[:max_length] + "..."
+
+
+def to_lower(text: str) -> str:
+    """Convert text to lowercase safely"""
+    return text.lower().strip()
+
+
+def remove_special_chars(text: str) -> str:
+    """Remove special characters"""
+    return re.sub(r"[^a-zA-Z0-9\s]", "", text)
+```
+
+
+# inside the router ->summarize.py add this line:-
+
+
+```text
+from app.utils.text import clean_text, truncate_text
+```
+
+# Run this command:-
+
+```text
+python -m pip install pydantic-settings
+```
+

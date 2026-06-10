@@ -1,14 +1,21 @@
 # Remaining Work
 
-dependencies.py file
-models.py file
-search about the .github\workflow
+dependencies.py file->DONE
+models.py file->DONE
+99% work is completed of the feature1 only remaining add temparature->DONE
+almost 80% work is completed of the subphase 1->DONE
 
-Feature 2nd is  also remaining
+1.search about the .github\workflow
+2.Revision of the whole project for better understanding and explaination
+3. 50% work is remaining of the Feature 2
+Testing  is completed of :-
+cache
+config
+4. volume add is nessacery in subphase1 and wha about themodel_cache fill it here.
 
-99% work is completed of the feature1 only remaining add temparature
-almost 80% work is completed of the subphase 1
-50% work is remaining of the Feature 2
+Search about it:-
+ Llama 3 8B via Groq, not BART.
+
 
 
 # Subphase 2 Work:-

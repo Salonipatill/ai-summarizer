@@ -9,6 +9,7 @@ PS C:\The Infimit\infimit> echo ai-service/.env >> .gitignore
 ```text
 PS C:\The Infimit\infimit> type .gitignore
 ```
+echo .env >> .gitignore
 # After running this command you will see
 
 ```text
@@ -42,6 +43,7 @@ Run:
 
 ```text
 PS C:\The Infimit\infimit> git rm --cached ai-service/.env
+git rm --cached.env
 >> git add .gitignore
 >> git commit -m "ignore .env file"
 fatal: pathspec 'ai-service/.env' did not match any files
@@ -78,6 +80,11 @@ origin  https://github.com/Srishti-Doshi/infimit.git (push)
 ```text
 PS C:\The Infimit\infimit> git push -u origin feature/article-summarizer
 ```
+git push -u origin Subphase1
+
+git push -u origin ai-service/Subphase1
+
+
 Enumerating objects: 76, done.
 Counting objects: 100% (76/76), done.
 Delta compression using up to 4 threads

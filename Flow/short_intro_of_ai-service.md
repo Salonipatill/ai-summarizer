@@ -1,0 +1,1 @@
+## We built an AI-powered summarization backend using FastAPI. It follows clean architecture with routers, services, and utility layers. It integrates Groq LLM for summarization and uses caching to optimize performance and reduce API calls. The system is modular, scalable, and production-ready.
