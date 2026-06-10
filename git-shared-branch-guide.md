@@ -55,7 +55,7 @@ type .env
 
 # step 4: git checkout ai-service/Subphase2
 
-# step 5: review that is there  ai-service folder or not if not so paste here ai-service folder(that we copyed)
+# step 5: review that is there ai-service folder or not if not so paste here ai-service folder(that we copyed)
 
 
 # Create a new branch and switch to it
