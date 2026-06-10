@@ -43,3 +43,17 @@ py -m pip show pydantic-settings
 
 # To check weather API Key is set in .env or not
 type .env
+
+## For Subphase 2
+
+# Step 1:  git checkout feat/subphase1-ai-service
+
+# step 2: git pull
+
+# step 3: create copy of the ai-service folder 
+
+# step 4: git checkout ai-service/Subphase2
+
+# step 5: review that is there  ai-service folder or not if not so paste here ai-service folder(that we copyed)
+
+
