@@ -77,3 +77,27 @@ venv\Scripts\activate
 
 # Deactivate the environment
 deactivate
+
+# Run
+
+py -m uvicorn app.main:app --reload
+
+# Tests
+
+py -m pytest
+
+# Health
+
+GET /v1/healthz
+
+# Ready
+
+GET /v1/readyz
+
+# Metrics
+
+GET /v1/metrics
+
+# Summarize
+
+POST /v1/summarize
