@@ -6,16 +6,33 @@
 
 # step 4 : git clone https://github.com/Srishti-Doshi/infimit.git
 
+# step 4.1 : go inside infimit
+
+PS C:\The Infimit> cd infimit
+
 # step 5 : create a new branch   git checkout feat/subphase2-ai-service
 
 # step 6 : switch on this branch
 
-# step 7 : git branch  
-recheck
+
+
+# step 7 : run this command 
+
+git branch  
+
 
 # step 8: now inside the infimit folder copy  ai-service folder [take this folder from old branch]
 
-# step 9 : go inside infimit->.gitignore file 
+# step 8.1 : go inside ai-service
+
+PS C:\The Infimit\infimit> cd ai-service
+PS C:\The Infimit\infimit\ai-service> 
+
+# step 8.2:
+run
+git branch
+
+# step 9 : look  inside infimit -> .gitignore file 
 
 # step 10 : 
 paste this 
@@ -36,6 +53,8 @@ venv/
 
 # step 11
 
+run here
+PS C:\The Infimit\infimit\ai-service> 
 # git status
 
 ✅ Expected
@@ -56,6 +75,8 @@ venv/
 __pycache__/
 .github/
 
+run here
+PS C:\The Infimit\infimit\ai-service> 
 # git diff --staged
 
 ✅ Expected
@@ -73,7 +94,8 @@ frontend/
 venv/
 site-packages/
 
-
+run here
+PS C:\The Infimit\infimit\ai-service> 
 # cat .gitignore
 
 ✅ Expected to contain at least
@@ -83,11 +105,15 @@ __pycache__/
 *.pyc
 .env
 
-
+run here
+PS C:\The Infimit\infimit\ai-service> 
 # pytest -q
 
 passed
 
+
+run here
+PS C:\The Infimit\infimit\ai-service> 
 
 # git rev-list --count origin/feat/subphase2-ai-service..HEAD
 
@@ -95,6 +121,8 @@ Before commit
 
 0
 
+run here
+PS C:\The Infimit\infimit\ai-service> 
 # git commit -m "feat(ai-service): complete /v1/summarize implementation with schemas, stub, metrics, errors, and tests"
 
 Expected
@@ -105,12 +133,17 @@ feat(ai-service): complete /v1/summarize implementation with schemas, stub, metr
 
 ## Check commits again
 
+run here
+PS C:\The Infimit\infimit\ai-service> 
 # git rev-list --count origin/feat/subphase2-ai-service..HEAD
 
 If you created exactly one new commit:
 
 1
 
+
+run here
+PS C:\The Infimit\infimit\ai-service> 
 # git push -u origin feat/subphase2-ai-service 
 
 
