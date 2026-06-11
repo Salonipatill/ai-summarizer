@@ -69,3 +69,14 @@ git branch
 # After creating it, push it to the remote repository
 
 git push -u origin branch-name
+
+# To clone the project from github Firstly create Virtual Environment
+
+# Create a virtual environment named venv
+python -m venv venv
+
+# Activate the virtual environment
+venv\Scripts\activate
+
+# Deactivate the environment
+deactivate
