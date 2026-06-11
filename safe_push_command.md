@@ -2,14 +2,12 @@
 
 ```text
 PS C:\The Infimit> cd infimit
-```
-```text
-PS C:\The Infimit\infimit> echo ai-service/.env >> .gitignore
-```
+
+ 
 ```text
 PS C:\The Infimit\infimit> type .gitignore
 ```
-echo .env >> .gitignore
+ 
  
 Run:
 
@@ -18,8 +16,6 @@ PS C:\The Infimit\infimit> git rm --cached ai-service/.env
 git rm --cached.env
 >> git add .gitignore
 >> git commit -m "ignore .env file"
- 
- 
  
 
 ```text
