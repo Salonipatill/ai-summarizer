@@ -1,23 +1,23 @@
 # Step 1: Create Fresh new Folder :-The Infimit
 
-# Step 2: go  inside this folder in the vs code
+# Step 2: Go inside this folder in the vs code
 
-# step 3: click on the terminal 
+# Step 3: Click on the Terminal 
 
-# step 4 : git clone https://github.com/Srishti-Doshi/infimit.git
+# Step 4 : git clone https://github.com/Srishti-Doshi/infimit.git
 
-# step 5 : create a new branch   git checkout feat/subphase2-ai-service
+# Step 5 : Create a new branch: git checkout -b feat/subphase2-ai-service
 
-# step 6 : switch on this branch
+# Step 6 : Switch on this branch
 
-# step 7 : git branch  
+# Step 7 : git branch  
 recheck
 
-# step 8: now inside the infimit folder copy  ai-service folder [take this folder from old branch]
+# Step 8: now inside the infimit folder copy  ai-service folder [take this folder from old branch]
 
-# step 9 : go inside infimit->.gitignore file 
+# Step 9 : go inside infimit->.gitignore file 
 
-# step 10 : 
+# Step 10 : 
 paste this 
 ```text
 # Local env files
@@ -34,7 +34,7 @@ venv/
 .venv/
 ```
 
-# step 11
+# Step 11
 
 # git status
 
@@ -120,5 +120,3 @@ Counting objects...
 Writing objects...
 To github.com:...
  * [new branch]      ai-service/Subphase2 -> ai-service/Subphase2
-
-                                                                                                                        
