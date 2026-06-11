@@ -1,4 +1,4 @@
-# Step 1: Create Fresh new Folder :-The Infimit
+# Step 1: Create Fresh new Folder:- The Infimit
 
 # Step 2: Go inside this folder in the vs code
 
@@ -15,7 +15,7 @@ recheck
 
 # Step 8: now inside the infimit folder copy  ai-service folder [take this folder from old branch]
 
-# Step 9 : go inside infimit->.gitignore file 
+# Step 9 : go inside The Infimit->.gitignore file 
 
 # Step 10 : 
 paste this 
@@ -112,7 +112,6 @@ If you created exactly one new commit:
 1
 
 # git push -u origin feat/subphase2-ai-service 
-
 
 ✅ Expected
 Enumerating objects...
