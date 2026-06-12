@@ -14,6 +14,9 @@ git checkout ai-service/Subphase1
 # To Delete Branch
 git branch -d branch-name or [if not merged] git branch -D branch-name
 
+# To delete it from Github
+git push origin --delete branch-name
+
 # Check current branch
 
 ```text
