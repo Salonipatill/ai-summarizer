@@ -11,6 +11,9 @@ git fetch
 git checkout ai-service/Subphase1
 ```
 
+# To Delete Branch
+git branch -d branch-name or [if not merged] git branch -D branch-name
+
 # Check current branch
 
 ```text
