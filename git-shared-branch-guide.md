@@ -1,12 +1,9 @@
-# First
 # Fetch Latest Updates from GitHub
-
 ```text
 git fetch
 ```
 
 # Switch to Shared Branch
-
 ```text 
 git checkout ai-service/Subphase1
 ```
@@ -18,14 +15,12 @@ git branch -d branch-name or [if not merged] git branch -D branch-name
 git push origin --delete branch-name
 
 # Check current branch
-
 ```text
 git branch
 ```
 
 # Pull Latest Code
 Always do this before starting work:
-
 ```text
 git pull origin ai-service/Subphase1
 ```
@@ -62,19 +57,15 @@ type .env
 # step 4: git checkout ai-service/Subphase2
 
 # Create a new branch and switch to it
-
 git checkout -b branch-name
 
 # Verify Branch
-
 git branch
 
 # After creating it, push it to the remote repository
-
 git push -u origin branch-name
 
 # To clone the project from github Firstly create Virtual Environment
-
 # Create a virtual environment named venv
 python -m venv venv
 
@@ -85,25 +76,19 @@ venv\Scripts\activate
 deactivate
 
 # Run
-
 py -m uvicorn app.main:app --reload
 
 # Tests
-
 py -m pytest
 
 # Health
-
 GET /v1/healthz
 
 # Ready
-
 GET /v1/readyz
 
 # Metrics
-
 GET /v1/metrics
 
 # Summarize
-
 POST /v1/summarize
