@@ -1,5 +1,7 @@
 git status --short
 git status --short ai-service
+git diff --stat 9bba6b0..HEAD
+git show 05c5157[To see the exact code added in the latest commit, run]
 git status --untracked-files=all
 git ls-files --others --exclude-standard
 git diff --name-only
